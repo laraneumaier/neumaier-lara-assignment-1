@@ -330,6 +330,7 @@ ul.style3 .date a:hover
 
 .slides{
 	display: none;
+	text-align: center;
 }
 
 .zurueck, .vor{
@@ -337,11 +338,15 @@ ul.style3 .date a:hover
 	font-size: xx-large;
 	color: #8EBEAE;
 	transition: ease-in;
+	margin-top: 180px ;
 
 }
 
 .vor{
 	float: right;
+}
+.zurueck{
+	float: left;
 }
 .clearfix
 {
@@ -563,7 +568,4 @@ ul.style3 .date a:hover
 {
 	float: right;
 	width: 384px;
-}
-.zurueck{
-	max-resolution: ;
 }
