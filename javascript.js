@@ -1,7 +1,7 @@
 var slideIndex = 1;
 zeigeSlides(slideIndex); 
 
-// kontrolliert vor und zurück von den button
+// kontrolliert vor und zurück von den button, die funktion wird von den Bilderbuttons aufgerufen
 function plusSlides(n) {
   zeigeSlides(slideIndex +=n);
 }
