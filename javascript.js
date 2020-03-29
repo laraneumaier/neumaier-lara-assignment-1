@@ -27,4 +27,4 @@ function zeigeSlides(n){
     slides[slideIndex-1].style.display = "block";
 }
 
-
+// Kommenatar um git zu testen
