@@ -29,6 +29,15 @@ function zeigeSlides(n){
     slides[slideIndex-1].style.display = "block"; //zeigen (-1 muss man schreiben da Arrays mit null anfangen, also 1-1=0)
 } 
 
+var inhalt = "";
+window.addEventListener("load", kennwortPrufen (inhalt)); //alle Funktionen mit Eventlistener umschließen, ansonsten ladet die Seite nicht ganz 
+
+function kennwortPrufen (inhalt){
+    if (inhalt==="") { //strikte Gleichheit, Inhalt ist das leere value Feld
+            document.getElementById("pinhalt").innerHTML = "NEW";   
+    }
+
+}
 
 
  
