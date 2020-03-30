@@ -335,10 +335,10 @@ ul.style3 .date a:hover
 
 .zurueck, .vor{
 	top: 50%;
-	font-size: xx-large;
+	font-size: 70px;
 	color: #8EBEAE;
 	transition: ease-in;
-	margin-top: 180px ;
+	margin-top: 140px ;
 
 }
 
@@ -462,6 +462,27 @@ ul.style3 .date a:hover
 
 #sidebar
 {
+}
+/* Registation*/
+#registieren{
+	width: 1200px;
+	margin: 30px auto;
+	
+
+}
+#registieren p{
+	font-weight: bold;
+	font-size: 16px;
+	color: #8EBEAE;
+}
+
+#password, #email{
+	float: right;
+	margin-top: 7px;
+	
+}
+#email{
+	margin-right: 10px;
 }
 
 /* Footer */
