@@ -34,8 +34,20 @@ window.addEventListener("load", kennwortPrufen (inhalt)); //alle Funktionen mit 
 
 function kennwortPrufen (inhalt){
     if (inhalt==="") { //strikte Gleichheit, Inhalt ist das leere value Feld
-            document.getElementById("pinhalt").innerHTML = "NEW";   
+        window.addEventListener("load", function(){ 
+            document.getElementById("password").style.backgroundColor="white";
+            document.getElementById("pinhalt").innerHTML="Registieren Sie sich noch heute und erhalten sie 10% Rabatt auf all usere Produkte";
+        });
     }
+    if (window.XMLHttpRequest){
+        xmlhttp = new XMLHttpRequest();
+    }
+    xmlhttp.onreeadystatechange=function(){
+        if(xmlhttp.readyState==4 && xmlhttp.status==200){
+            document.getElementById("pinhalt").innerHTML = xmlhttp.responseText;
+        }
+    }
+    
 
 }
 
