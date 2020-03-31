@@ -38,13 +38,18 @@ function kennwortPrufen (inhalt){
             document.getElementById("password").style.backgroundColor="white";
             document.getElementById("pinhalt").innerHTML="Registieren Sie sich noch heute und erhalten sie 10% Rabatt auf all usere Produkte";
         });
-    }
+    } 
+    /* Ajax Aufruf */ 
     if (window.XMLHttpRequest){
         xmlhttp = new XMLHttpRequest();
     }
     xmlhttp.onreeadystatechange=function(){
-        if(xmlhttp.readyState==4 && xmlhttp.status==200){
+        /* readyState --> 4 da, 4 done bedeutet siehe hier: "https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState";
+        xmlhtt.status 200 da 200 dafür steht, dass alles ok ist.
+        => kurz Anfrage war erfolgreich und ist erledigt */ 
+        if(xmlhttp.readyState==4 && xmlhttp.status==200){ 
             document.getElementById("pinhalt").innerHTML = xmlhttp.responseText;
+           /* document.getElementById("password").style.backgroundColor */
         }
     }
     
