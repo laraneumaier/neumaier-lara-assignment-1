@@ -1,7 +1,14 @@
-var slideIndex = 1; 
-window.addEventListener("load", zeigeSlides);
-//zeigeSlides(slideIndex); //damit am anfang direkt ein Bild angezeigt wird, muss man direkt sagen: zeige einen Slide und der Slideindex wäre hier 0 laso das erste Bild 
+window.addEventListener("load", initScript);
 
+function initScript(){
+    zeigeSlides();
+    kennwortPrufen (inhalt);
+    feedbackBogenEinblenden();
+}
+
+/* SLIDESHOW */
+
+var slideIndex = 1; 
 // kontrolliert vor und zurück von den button, die funktion wird von den Bilderbuttons aufgerufen
 function plusSlides(n) {
   zeigeSlides(slideIndex +=n);
@@ -30,14 +37,11 @@ function zeigeSlides(n){
 } 
 
 var inhalt = "";
-window.addEventListener("load", kennwortPrufen (inhalt)); //alle Funktionen mit Eventlistener umschließen, ansonsten ladet die Seite nicht ganz 
 
 function kennwortPrufen (inhalt){
     if (inhalt==="") { //strikte Gleichheit, Inhalt ist das leere value Feld
-        window.addEventListener("load", function(){ 
             document.getElementById("password").style.backgroundColor="white";
             document.getElementById("pinhalt").innerHTML="Registieren Sie sich noch heute und erhalten sie 10% Rabatt auf all usere Produkte";
-        });
     } 
     /* Ajax Aufruf */ 
     if (window.XMLHttpRequest){
@@ -57,13 +61,7 @@ function kennwortPrufen (inhalt){
 }
 
 
-let anzeigeFeedback = setTimeout (
-    feedbackBogenEinblenden, 
-    30000 // nach einer minunten feedbackBogenEinblenden
-);
 
 function feedbackBogenEinblenden(){
-    
+   document.getElementById("popup").style.display="none";
 }
-
- 

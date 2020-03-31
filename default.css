@@ -458,13 +458,10 @@ ul.style3 .date a:hover
 {
 }
 
-/** Feedback *//
-#popup{
-    z-index:10000;
-}
+/** Feedback */
 
-#popup > div{
-	/**display: none;**/
+#popup{
+	z-index:10000;
 	float: center;
 	width: 400px;
 	height: 70px;
@@ -476,6 +473,7 @@ ul.style3 .date a:hover
 	border-radius: 5px;
 	position: fixed;
 	padding: 10px;
+	
 
 }
 
