@@ -3,7 +3,7 @@ window.addEventListener("load", initScript);
 function initScript(){
     zeigeSlides();
     kennwortPrufen (inhalt);
-    feedbackBogenEinblenden();
+    popupBoxAnzeigen();
 }
 
 /* SLIDESHOW */
@@ -60,8 +60,26 @@ function kennwortPrufen (inhalt){
 
 }
 
+// nach 30 Sekunden Popup anzeigen
+function popupBoxAnzeigen() {
+  window.setTimeout(feedbackBogenEinblenden, 30000);
+}
 
-
+// Popup sichtbar machen und Scrollen verhindern
 function feedbackBogenEinblenden(){
-   document.getElementById("popup").style.display="none";
+   document.getElementById("popup").style.visibility="visible"; 
+   scrollenVerhinden();
+}
+
+/* Nimm die aktuelle Position und immer wenn man versucht zu scrollen, bleibt man an der Stelle, weil man schon durch die scrollTo wieder an diese Stelle geleitet wird*/
+function scrollenVerhinden(){
+    var x=window.scrollX;
+    var y=window.scrollY;
+    window.onscroll=function(){window.scrollTo(x, y);};
+}
+
+/* Wenn diese Funktion aufgerufen wird (dies geschieht per klick auf den Button) kann man wieder scollen und das Popup-Element verschwindet */
+function popupSchließen(){ 
+    window.onscroll=function(){};
+    document.getElementById("popup").style.visibility="hidden";
 }
