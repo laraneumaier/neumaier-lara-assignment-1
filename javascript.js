@@ -57,4 +57,13 @@ function kennwortPrufen (inhalt){
 }
 
 
+let anzeigeFeedback = setTimeout (
+    feedbackBogenEinblenden, 
+    30000 // nach einer minunten feedbackBogenEinblenden
+);
+
+function feedbackBogenEinblenden(){
+    alert("Feedbackbogen");
+}
+
  
