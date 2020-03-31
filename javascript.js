@@ -63,7 +63,7 @@ let anzeigeFeedback = setTimeout (
 );
 
 function feedbackBogenEinblenden(){
-    alert("Feedbackbogen");
+    
 }
 
  
