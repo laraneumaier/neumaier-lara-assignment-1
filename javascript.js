@@ -4,6 +4,8 @@ function initScript(){
     zeigeSlides();
     kennwortPrufen (inhalt);
     popupBoxAnzeigen();
+    canvas();
+    
 }
 
 /* SLIDESHOW */
@@ -58,6 +60,13 @@ function kennwortPrufen (inhalt){
     }
     
 
+}
+
+/* Canvas */ 
+
+function canvas (){
+var canvas = document.getElementById("canvas");
+var contextCanvas = canvas.getContext("2d");
 }
 
 /* Popupbox */
