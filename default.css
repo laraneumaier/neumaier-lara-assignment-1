@@ -485,7 +485,6 @@ ul.style3 .date a:hover
 	color: #8EBEAE;
 	margin-top: -13px;
 }
-
 /** SIDEBAR */
 
 #sidebar
@@ -512,7 +511,14 @@ ul.style3 .date a:hover
 #email{
 	margin-right: 10px;
 }
-
+#canvas{
+	background-origin: padding-box;
+	border: 1px solid #8EBEAE;
+	float: right;
+	margin-right: -80px;
+	margin-top: -15px;
+	/**visibility: hidden; **/
+}
 /* Footer */
 
 #footer-content

@@ -7,7 +7,6 @@ function initScript(){
 }
 
 /* SLIDESHOW */
-
 var slideIndex = 1; 
 // kontrolliert vor und zurück von den button, die funktion wird von den Bilderbuttons aufgerufen
 function plusSlides(n) {
@@ -36,8 +35,9 @@ function zeigeSlides(n){
     slides[slideIndex-1].style.display = "block"; //zeigen (-1 muss man schreiben da Arrays mit null anfangen, also 1-1=0)
 } 
 
-var inhalt = "";
+/* Passwort prüfen mit Ajax */
 
+var inhalt = "";
 function kennwortPrufen (inhalt){
     if (inhalt==="") { //strikte Gleichheit, Inhalt ist das leere value Feld
             document.getElementById("password").style.backgroundColor="white";
@@ -59,6 +59,8 @@ function kennwortPrufen (inhalt){
     
 
 }
+
+/* Popupbox */
 
 // nach 30 Sekunden Popup anzeigen
 function popupBoxAnzeigen() {
