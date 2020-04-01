@@ -4,8 +4,6 @@ function initScript(){
     zeigeSlides();
     kennwortPrufen (inhalt);
     popupBoxAnzeigen();
-    canvas();
-    
 }
 
 /* SLIDESHOW */
@@ -64,11 +62,43 @@ function kennwortPrufen (inhalt){
 
 /* Canvas */ 
 
-function canvas (){
-var canvas = document.getElementById("canvas");
-var contextCanvas = canvas.getContext("2d");
+function canvasGesichtLacheln(){
+let canvas = document.getElementById("canvas");
+let contextLinie = canvas.getContext("2d");
+contextLinie.strokeStyle = "#8EBEAE";
+contextLinie.fillStyle ="#8EBEAE";
+// Kreis
+contextLinie.beginPath();
+contextLinie.arc(30,30,25,0,2*Math.PI); //arc( x, y, r, Startwinkel, Endwinkel)
+contextLinie.stroke();
+// Augen 
+contextLinie.beginPath();
+contextLinie.arc(20,22,3,0,2*Math.PI);
+contextLinie.arc(40,22,3,0,2*Math.PI);
+contextLinie.fill();
+// Mund
+contextLinie.beginPath();
+contextLinie.moveTo(15,33);
+contextLinie.lineTo(45,33);
+contextLinie.arc(30, 33,15, 0, Math.PI,false); // Mittelpunkt von beiden Augen, und differenz ist der Radius
+contextLinie.stroke();
 }
 
+function canvasGesichtsauer (){
+    let canvasSmilie = document.getElementById("canvas");
+    let contextCanvas = canvasSmilie.getContext("2d");
+    contextLinie.strokeStyle = "#8EBEAE";
+contextLinie.fillStyle ="#8EBEAE";
+// Kreis
+contextLinie.beginPath();
+contextLinie.arc(30,30,25,0,2*Math.PI); //arc( x, y, r, Startwinkel, Endwinkel)
+contextLinie.stroke();
+// Augen 
+contextLinie.beginPath();
+contextLinie.arc(20,22,3,0,2*Math.PI);
+contextLinie.arc(40,22,3,0,2*Math.PI);
+contextLinie.fill();
+}
 /* Popupbox */
 
 // nach 30 Sekunden Popup anzeigen
