@@ -82,7 +82,6 @@ function canvasGesichtLacheln(){
     contextLinie.arc(20,22,3,0,2*Math.PI);
     contextLinie.arc(40,22,3,0,2*Math.PI);
     contextLinie.fill();
-    // Mund
 }
 
 function canvasGesichtsauer (){
@@ -100,11 +99,20 @@ function canvasGesichtsauer (){
     contextLinie.lineTo(35,24);
     contextLinie.stroke();
     // Augen 
-    contextLinie.beginPath();
+    contextLinie.beginPath(); // hier neuer Pfad anfangen, damit die anderen Elemente wie der Kreis nicht eingefärbt werden 
     contextLinie.arc(20,27,3,0,2*Math.PI);
     contextLinie.arc(40,27,3,0,2*Math.PI);
     contextLinie.fill();
-    
+    //Mund 
+    contextLinie.beginPath ();
+    contextLinie.arc(30,43,8, 0, Math.PI,true); // mit true und false drehen
+    contextLinie.fill();
+
+    contextLinie.beginPath();
+    contextLinie.fillStyle="white";
+    contextLinie.arc(30,45,7,0, Math.PI,true);
+    contextLinie.fill();
+
 }
 /* Popupbox */
 
