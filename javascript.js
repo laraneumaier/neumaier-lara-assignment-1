@@ -114,11 +114,11 @@ function canvasGesichtsauer (){
     contextLinie.fill();
 
 }
+
 /* Popupbox */
 
-// nach 30 Sekunden Popup anzeigen
 function popupBoxAnzeigen() {
-  window.setTimeout(feedbackBogenEinblenden, 30000);
+  window.setTimeout(feedbackBogenEinblenden, 30000); // nach 30 Sekunden Popup anzeigen
 }
 
 // Popup sichtbar machen und Scrollen verhindern
