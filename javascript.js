@@ -5,6 +5,7 @@ function initScript(){
     kennwortPrufen (inhalt);
     popupBoxAnzeigen();
     canvasGesichtsauer();
+    fixNavigatin();
 }
 
 /* SLIDESHOW */
@@ -139,3 +140,12 @@ function popupSchließen(){
     window.onscroll=function(){};
     document.getElementById("popup").style.visibility="hidden";
 }
+
+/* Sticky Navbar */
+//top of Nav herausfinden, da der grüne Balken oben drüber ist
+function fixNavigatin (){
+    var navigation = document.getElementById("header");
+    var topnav = navigation.offsetTop;
+    console.log(topnav.window.scrollY);
+}
+

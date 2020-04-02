@@ -360,7 +360,11 @@ ul.style3 .date a:hover
 	overflow: hidden;
 	border-bottom: 1px solid #E7E7E7;
 }
-
+.sticky{
+	position: fixed;
+	top: 0;
+	width: 1200px;
+}
 /** LOGO */
 
 #logo
