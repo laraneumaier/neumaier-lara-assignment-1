@@ -118,7 +118,7 @@ function canvasGesichtsauer (){
 /* Popupbox */
 
 function popupBoxAnzeigen() {
-  window.setTimeout(feedbackBogenEinblenden, 30000); // nach 30 Sekunden Popup anzeigen
+  window.setTimeout(feedbackBogenEinblenden, 1000); // nach 30 Sekunden Popup anzeigen
 }
 
 // Popup sichtbar machen und Scrollen verhindern
@@ -129,26 +129,28 @@ function feedbackBogenEinblenden(){
 
 /* Nimm die aktuelle Position und immer wenn man versucht zu scrollen, bleibt man an der Stelle, weil man schon durch die scrollTo wieder an diese Stelle geleitet wird*/
 function scrollenVerhinden(){
-    var x=window.scrollX;
-    var y=window.scrollY;
+    let x=window.scrollX;
+    let y=window.scrollY;
     window.onscroll=function(){window.scrollTo(x, y);};
 }
 
 /* Wenn diese Funktion aufgerufen wird (dies geschieht per klick auf den Button) kann man wieder scollen und das Popup-Element verschwindet */
 function popupSchließen(){ 
-    window.onscroll=function(){};
+    window.onscroll= function(){
+        fixNavigation();
+    };
     document.getElementById("popup").style.visibility="hidden";
 }
 
 /* Sticky Navbar */
 //top of Nav herausfinden, da der grüne Balken oben drüber ist
 function fixNavigation (){
-   // var navigation = document.getElementById("header");
+   navigation = document.getElementById("header");
     // var topnav = window.getComputedStyle(navigation).getPropertyValue("position"); 
    // var navigationAbstandO = navigation.offsetTop;
     if (window.pageYOffset >= 40) {
-        document.getElementById("header").style.position ="fixed";
+        navigation.classList.add("sticky");
         } else {
-        document.getElementById("header").style.position="relative";
+       navigation.classList.remove("sticky");
     }
 }
