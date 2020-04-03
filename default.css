@@ -359,6 +359,7 @@ ul.style3 .date a:hover
 {
 	overflow: hidden;
 	border-bottom: 1px solid #E7E7E7;
+	position: relative;
 }
 .sticky{
 	position: fixed;

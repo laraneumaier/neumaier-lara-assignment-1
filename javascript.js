@@ -5,7 +5,6 @@ function initScript(){
     kennwortPrufen (inhalt);
     popupBoxAnzeigen();
     canvasGesichtsauer();
-    fixNavigatin();
 }
 
 /* SLIDESHOW */
@@ -143,9 +142,13 @@ function popupSchließen(){
 
 /* Sticky Navbar */
 //top of Nav herausfinden, da der grüne Balken oben drüber ist
-function fixNavigatin (){
-    var navigation = document.getElementById("header");
-    var topnav = navigation.offsetTop;
-    console.log(topnav.window.scrollY);
+function fixNavigation (){
+   // var navigation = document.getElementById("header");
+    // var topnav = window.getComputedStyle(navigation).getPropertyValue("position"); 
+   // var navigationAbstandO = navigation.offsetTop;
+    if (window.pageYOffset >= 40) {
+        document.getElementById("header").style.position ="fixed";
+        } else {
+        document.getElementById("header").style.position="relative";
+    }
 }
-
