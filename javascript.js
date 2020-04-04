@@ -40,14 +40,12 @@ function zeigeSlides(n){
 
 var inhalt = "";
 function kennwortPrufen (inhalt){
-    if (inhalt==="") { //strikte Gleichheit, Inhalt ist das leere value Feld
+    if (inhalt==="" && window.XMLHttpRequest) { //strikte Gleichheit, Inhalt ist das leere value Feld
             document.getElementById("password").style.backgroundColor="white";
             document.getElementById("pinhalt").innerHTML="Registieren Sie sich noch heute und erhalten sie 10% Rabatt auf all usere Produkte";
+            xmlhttp = new XMLHttpRequest();
     } 
     /* Ajax Aufruf */ 
-    else (window.XMLHttpRequest){
-        xmlhttp = new XMLHttpRequest();
-    }
     
     xmlhttp.onreeadystatechange=function(){
         /* readyState --> 4 da, 4 done bedeutet siehe hier: "https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState";
@@ -119,7 +117,7 @@ function canvasGesichtsauer (){
 /* Popupbox */
 
 function popupBoxAnzeigen() {
-  window.setTimeout(feedbackBogenEinblenden, 1000); // nach 30 Sekunden Popup anzeigen
+  window.setTimeout(feedbackBogenEinblenden, 30000); // nach 30 Sekunden Popup anzeigen
 }
 
 // Popup sichtbar machen und Scrollen verhindern
