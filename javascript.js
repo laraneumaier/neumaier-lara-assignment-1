@@ -2,7 +2,6 @@ window.addEventListener("load", initScript);
 
 function initScript(){
     zeigeSlides();
-    kennwortPrufen (inhalt);
     popupBoxAnzeigen();
     canvasGesichtsauer();
 }
@@ -40,11 +39,16 @@ function zeigeSlides(n){
 
 var inhalt = "";
 function kennwortPrufen (inhalt){
-    if (inhalt==="" && window.XMLHttpRequest) { //strikte Gleichheit, Inhalt ist das leere value Feld
+    if (inhalt==="") { //strikte Gleichheit, Inhalt ist das leere value Feld
             document.getElementById("password").style.backgroundColor="white";
             document.getElementById("pinhalt").innerHTML="Registieren Sie sich noch heute und erhalten sie 10% Rabatt auf all usere Produkte";
-            xmlhttp = new XMLHttpRequest();
+            return;
     } 
+
+    if(window.XMLHttpRequest){
+        xmlhttp = new XMLHttpRequest();
+    }
+
     /* Ajax Aufruf */ 
     // auf Antwort vom Sever warten
     xmlhttp.onreeadystatechange=function(){
@@ -56,7 +60,7 @@ function kennwortPrufen (inhalt){
            /* document.getElementById("password").style.backgroundColor */
         }
     }
-    xmlhttp.open("get","kennwort.php?q",inhalt,true)
+    xmlhttp.open("GET","kennwort.php?q"+ inhalt,true);
     xmlhttp.send();
 }
 

@@ -1,4 +1,4 @@
 <?php 
-¢halllo=`hallo`;
-echo ¢halllo;
+$hallo=`hallo`;
+echo $hallo;
 ?>
