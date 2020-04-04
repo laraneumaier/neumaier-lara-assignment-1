@@ -45,9 +45,10 @@ function kennwortPrufen (inhalt){
             document.getElementById("pinhalt").innerHTML="Registieren Sie sich noch heute und erhalten sie 10% Rabatt auf all usere Produkte";
     } 
     /* Ajax Aufruf */ 
-    if (window.XMLHttpRequest){
+    else (window.XMLHttpRequest){
         xmlhttp = new XMLHttpRequest();
     }
+    
     xmlhttp.onreeadystatechange=function(){
         /* readyState --> 4 da, 4 done bedeutet siehe hier: "https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState";
         xmlhtt.status 200 da 200 dafür steht, dass alles ok ist.
@@ -57,8 +58,8 @@ function kennwortPrufen (inhalt){
            /* document.getElementById("password").style.backgroundColor */
         }
     }
-    
-
+    xmlhttp.open("get","kennwort.php?q",inhalt,true)
+    xmlhttp.send();
 }
 
 /* Canvas */ 
@@ -145,9 +146,7 @@ function popupSchließen(){
 /* Sticky Navbar */
 //top of Nav herausfinden, da der grüne Balken oben drüber ist
 function fixNavigation (){
-   navigation = document.getElementById("header");
-    // var topnav = window.getComputedStyle(navigation).getPropertyValue("position"); 
-   // var navigationAbstandO = navigation.offsetTop;
+   let navigation = document.getElementById("header");
     if (window.pageYOffset >= 40) {
         navigation.classList.add("sticky");
         } else {
