@@ -46,7 +46,7 @@ function kennwortPrufen (inhalt){
             xmlhttp = new XMLHttpRequest();
     } 
     /* Ajax Aufruf */ 
-    
+    // auf Antwort vom Sever warten
     xmlhttp.onreeadystatechange=function(){
         /* readyState --> 4 da, 4 done bedeutet siehe hier: "https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState";
         xmlhtt.status 200 da 200 dafür steht, dass alles ok ist.

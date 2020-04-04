@@ -1,2 +1,4 @@
-<?php
+<?php 
+¢halllo=`hallo`;
+echo ¢halllo;
 ?>
