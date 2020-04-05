@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <!--
 Design by TEMPLATED
 http://templated.co
@@ -141,10 +141,10 @@ Released   : 20130425
 	</div>
 </div>
 <div id="registieren">
-	<canvas id="canvas" width="60" height="60"></canvas>
-	<input id="password" type="password" size="30" value="" placeholder="Passwort" onkeyup="kennwortPrufen(inhalt)"/> <!-- onkeyup später einfügen, damit jedes mal nach einem Userinput geprüft wird, ob das Passwort nun sicher ist --->
-	<input id ="email" type="email" size="30" placeholder="Email"/>
-	<p id="pinhalt"></p>
+	<canvas id="canvas" width="60" height="60" onclick="canvasGeklickt"></canvas>
+	<canvas id="canvasneutral" width="60" height="60" onclick="canvasGeklickt();"></canvas>
+	<canvas id="canvaslachen" width="60" height="60"></canvas>
+	<p id="pinhalt">Wählen sie das Emoji aus, das ihre Stimmungen am besten wiederspiegelt</p>
 </div>
 <div id="footer">
 	<p>&copy; Untitled. All rights reserved. Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. Photos by <a href="http://fotogrph.com/">Fotogrph</a>.</p>

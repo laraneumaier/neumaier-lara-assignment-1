@@ -4,6 +4,8 @@ function initScript(){
     zeigeSlides();
     popupBoxAnzeigen();
     canvasGesichtsauer();
+    canvasGesichtLacheln();
+    canvasGesichtNeutral();
 }
 
 /* SLIDESHOW */
@@ -35,39 +37,10 @@ function zeigeSlides(n){
     slides[slideIndex-1].style.display = "block"; //zeigen (-1 muss man schreiben da Arrays mit null anfangen, also 1-1=0)
 } 
 
-/* Passwort prüfen mit Ajax */
-
-var inhalt = "";
-function kennwortPrufen (inhalt){
-    if (inhalt==="") { //strikte Gleichheit, Inhalt ist das leere value Feld
-            document.getElementById("password").style.backgroundColor="white";
-            document.getElementById("pinhalt").innerHTML="Registieren Sie sich noch heute und erhalten sie 10% Rabatt auf all usere Produkte";
-            return;
-    } 
-
-    if(window.XMLHttpRequest){
-        xmlhttp = new XMLHttpRequest();
-    }
-
-    /* Ajax Aufruf */ 
-    // auf Antwort vom Sever warten
-    xmlhttp.onreeadystatechange=function(){
-        /* readyState --> 4 da, 4 done bedeutet siehe hier: "https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState";
-        xmlhtt.status 200 da 200 dafür steht, dass alles ok ist.
-        => kurz Anfrage war erfolgreich und ist erledigt */ 
-        if(xmlhttp.readyState==4 && xmlhttp.status==200){ 
-            document.getElementById("pinhalt").innerHTML = xmlhttp.responseText;
-           /* document.getElementById("password").style.backgroundColor */
-        }
-    }
-    xmlhttp.open("GET","kennwort.php?q"+ inhalt,true);
-    xmlhttp.send();
-}
-
 /* Canvas */ 
 
 function canvasGesichtLacheln(){
-    let canvas = document.getElementById("canvas");
+    let canvas = document.getElementById("canvaslachen");
     let contextLinie = canvas.getContext("2d");
     contextLinie.strokeStyle = "#8EBEAE";
     contextLinie.fillStyle ="#8EBEAE";
@@ -115,10 +88,31 @@ function canvasGesichtsauer (){
     contextLinie.fillStyle="white";
     contextLinie.arc(30,45,7,0, Math.PI,true);
     contextLinie.fill();
-
 }
 
-/* Popupbox */
+function canvasGesichtNeutral(){
+    let canvas = document.getElementById("canvasneutral");
+    let contextLinie = canvas.getContext("2d");
+    contextLinie.strokeStyle = "#FFA500";
+    contextLinie.fillStyle ="#FFA500";
+    // Kreis
+    contextLinie.beginPath();
+    contextLinie.arc(30,30,25,0,2*Math.PI); //arc( x, y, r, Startwinkel, Endwinkel)
+    // Mund
+    contextLinie.moveTo(15,33);
+    contextLinie.lineTo(45,33);
+    contextLinie.stroke(); //ausmalen 
+    // Augen 
+    contextLinie.beginPath();
+    contextLinie.arc(20,22,3,0,2*Math.PI);
+    contextLinie.arc(40,22,3,0,2*Math.PI);
+    contextLinie.fill();
+}
+
+function canvasGeklickt (){
+    
+}
+
 
 function popupBoxAnzeigen() {
   window.setTimeout(feedbackBogenEinblenden, 30000); // nach 30 Sekunden Popup anzeigen
