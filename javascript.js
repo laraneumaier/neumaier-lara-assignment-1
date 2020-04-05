@@ -109,8 +109,16 @@ function canvasGesichtNeutral(){
     contextLinie.fill();
 }
 
-function canvasGeklickt (){
-    
+function canvasneutral (){
+    document.getElementById("pinhalt").innerHTML="Was gefällt ihnen an unserem Service nicht? Schreiben sie uns gerne eine Email mit ihrem Feedback an someone@untitled.tdl.";
+}
+
+function canvassauer (){
+    document.getElementById("pinhalt").innerHTML="Wir bitten um Entschuldigung. Wenden Sie sich an uns, damit wir das Problem schnellstmöglich aus der Welt schaffen können.";
+}
+
+function canvaslachen (){
+    document.getElementById("pinhalt").innerHTML="Vielen Dank für ihr positives Feedback";
 }
 
 
