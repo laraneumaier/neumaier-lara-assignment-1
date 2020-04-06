@@ -471,7 +471,7 @@ ul.style3 .date a:hover
 /** Feedback */
 
 #popup{
-	z-index:10000;
+	z-index:3344330000;
 	float: center;
 	width: 400px;
 	height: 80px;
@@ -540,6 +540,14 @@ ul.style3 .date a:hover
 	float: right; 
 	margin-right: 10px;
 	margin-top: -15px;
+}
+#personen div{
+	border-color:#8EBEAE;
+	border-width: 5px;
+	border-style: solid;
+	padding: 20px;
+	margin-top: 20px;
+	width: 20;
 }
 /* Footer */
 
