@@ -45,7 +45,6 @@ function canvasGesichtLacheln(){
     contextLinie.strokeStyle = "#8EBEAE";
     contextLinie.fillStyle ="#8EBEAE";
     // Kreis
-    contextLinie.beginPath();
     contextLinie.arc(30,30,25,0,2*Math.PI); //arc( x, y, r, Startwinkel, Endwinkel)
     // Mund
     contextLinie.moveTo(15,33);
@@ -66,7 +65,6 @@ function canvasGesichtsauer (){
     contextLinie.strokeStyle = "#B22222";
     contextLinie.fillStyle ="#B22222";
     // Kreis
-    contextLinie.beginPath();
     contextLinie.arc(30,30,25,0,2*Math.PI); //arc( x, y, r, Startwinkel, Endwinkel)
     // Augenbrauen
     contextLinie.moveTo(17,20);
@@ -96,7 +94,6 @@ function canvasGesichtNeutral(){
     contextLinie.strokeStyle = "#FFA500";
     contextLinie.fillStyle ="#FFA500";
     // Kreis
-    contextLinie.beginPath();
     contextLinie.arc(30,30,25,0,2*Math.PI); //arc( x, y, r, Startwinkel, Endwinkel)
     // Mund
     contextLinie.moveTo(15,33);
