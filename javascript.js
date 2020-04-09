@@ -1,4 +1,4 @@
-window.addEventListener("load", initScript);
+window.addEventListener("load", initScript());
 
 function initScript(){
     zeigeSlides();
